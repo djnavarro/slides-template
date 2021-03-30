@@ -19,7 +19,7 @@ output:
         </div>`
 ---
 
-```{r child = "style/setup.Rmd"}
+```{r child = "style/slide-setup.Rmd"}
 ```
 
 ```{r load-packages, message=FALSE, echo=FALSE}

@@ -1,13 +1,15 @@
 ```{r setup, include=FALSE}
+# (this .Rmd file is automatically included at the beginning of the slides)
+
 # R options
 options(htmltools.dir.version = FALSE)
+
 # figure height, width, dpi
-knitr::opts_chunk$set(echo = TRUE, 
-                      fig.width = 5, 
-                      fig.height = 3,
-                      dpi = 300)
+knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.height = 3, dpi = 300)
+
 # fontawesome
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
 # magick
 dev.off <- function(){
   invisible(grDevices::dev.off())
@@ -21,7 +23,7 @@ layout: true
   
 <div class="my-footer">
 <span>
-  <a href="https://slides.djnavarro.net/project-structure" target="_blank">slides.djnavarro.net/project-structure</a>
+  <a href="https://slides.djnavarro.net" target="_blank">slides.djnavarro.net</a>
 </span>
 </div> 
 
