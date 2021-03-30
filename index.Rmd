@@ -1,5 +1,5 @@
 ---
-title: "> &nbsp;&nbsp; `r emo::ji('building_construction')` <br>> &nbsp;&nbsp; Project structure"
+title: "> &nbsp;&nbsp; `r emo::ji('heart')` <br>> &nbsp;&nbsp; Slide title in sentence case"
 subtitle: ""
 author: "<br><br><b>Danielle Navarro</b>"
 date: ""
@@ -19,26 +19,28 @@ output:
         </div>`
 ---
 
+<!-- Note: At the outset, do a find/replace on "SLIDES-NAME" -->
+
 ```{r child = "style/slide-setup.Rmd"}
 ```
 
 ```{r load-packages, message=FALSE, echo=FALSE}
 library(tidyverse)
 library(flair)
+library(metathis)
 ```
 
 
 ```{r meta, echo=FALSE}
-library(metathis)
 meta() %>%
   meta_general(
-    description = "Project structure",
+    description = "A brief description of the slides",
   ) %>% 
   meta_name("github-repo" = "djnavarro/slides") %>% 
   meta_social(
-    title = "Project structure",
-    url = "https://slides.djnavarro.net/project-structure/",
-    image = "https://slides.djnavarro.net/project-structure/img/twitter-image.png",
+    title = "Slide title",
+    url = "https://slides.djnavarro.net/SLIDES-NAME",
+    image = "https://slides.djnavarro.net/SLIDES-NAME/img/twitter-image.png",
     image_alt = "",
     og_type = "website",
     og_author = "Danielle Navarro",
@@ -48,29 +50,16 @@ meta() %>%
 ```
 
 
-```{r include=FALSE}
-hook_source <- knitr::knit_hooks$get('source')
-knitr::knit_hooks$set(source = function(x, options) {
-  x <- stringr::str_replace(x, "^[[:blank:]]?([^*].+?)[[:blank:]]*#<<[[:blank:]]*$", "*\\1")
-  hook_source(x, options)
-})
-
-num_fmt <- scales::number_format(big.mark = ",")
-sec_num <- 0
-section <- function() {
-  sec_num <<- sec_num + 1
-  sec_num
-}
-```
-
 
 class: middle, inverse
 
 ## What are we going to cover?
 
-- Naming files
-- Project structure
+- Topic
+- Topic
+- Topic
 
+<!----------------------------- SLIDE BREAK ----------------------------->
 ---
 
 class: middle, inverse
@@ -79,48 +68,81 @@ class: middle, inverse
 
 - This is an introductory unit
 - Contains almost no programming content at all
+- Edit this list as needed
 
+
+<!----------------------------- SLIDE BREAK ----------------------------->
 ---
 
 class: middle, inverse
 
 ## Where can I find the resources?
 
-- These slides: [slides.djnavarro.net/project-structure](https://slides.djnavarro.net/project-structure)
-- YouTube videos: [youtube.djnavarro.net/project-structure](https://youtube.djnavarro.net/project-structure)
+- These slides: [slides.djnavarro.net/SLIDES-NAME](https://slides.djnavarro.net/SLIDES-NAME)
+- YouTube videos: [youtube.djnavarro.net/SLIDES-NAME](https://youtube.djnavarro.net/SLIDES-NAME)
 
+
+
+<!----------------------------- SLIDE BREAK ----------------------------->
+---
+
+class: middle
+
+```{r echo=FALSE, results='asis'}
+cat(create_section(
+  title = "Section"
+))
+```
+
+
+<!----------------------------- SLIDE BREAK ----------------------------->
 ---
 
 class: middle, inverse
 
-<!-- background-image: url("img/file-name-here.png") -->
-<!-- background-size: cover -->
+```{r echo=FALSE, results='asis'}
+cat(create_section(
+  title = "Another section",
+  shade = "#ffffff"
+))
+```
 
-.pull-left-narrow[
-  .huge-primary[.plainwhite[`r section()`]]
-]
-.pull-right-wide[
-<br><br><br>
-.larger[.embolden[.plainwhite[Naming things]]]
-]
 
+<!----------------------------- SLIDE BREAK ----------------------------->
 ---
 
 class: middle, inverse
 
+```{r echo=FALSE, results='asis'}
+cat(create_section(
+  title = "One last section",
+  shade = "#ffffff",
+  image = "img/faint-hearts.png"
+))
+```
 
-.hand[Acknowledgment]
-
-- "Everything I know is from Jenny Bryan"
-- This section is based on (i.e., shamelessly mimics) her slides
-- https://speakerdeck.com/jennybc/how-to-name-files
 
 
+
+<!----------------------------- SLIDE BREAK ----------------------------->
+---
+
+class: middle
+
+
+.hand[Text in the hand-written style]
+
+- Content
+- Content
+- Content
+
+
+<!----------------------------- SLIDE BREAK ----------------------------->
 ---
 
 class: inverse
 
-.hand[Love the slug `r emo::ji("snail")`]
+.hand[A slide with flair]
 
 ```{r filenames, include=FALSE, results='hide'}
 "analysis01_descriptive-statistics.R"
@@ -135,5 +157,17 @@ decorate_chunk("filenames") %>%
   flair_rx("_[^.]*") %>% 
   flair::knit_print.with_flair()
 ```
+
+
+
+<!----------------------------- SLIDE BREAK ----------------------------->
+---
+
+class: middle
+
+background-image: url("img/faint-hearts.png")
+background-size: cover
+
+.hand[.plainwhite[... and we're done! `r emo::ji('heart')`]]
 
 
